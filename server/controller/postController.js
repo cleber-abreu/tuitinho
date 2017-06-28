@@ -86,6 +86,7 @@ exports.postsTag = function(tag, callback) {
             
             for (i in users) {
                 for( j in users[i].posts) {
+                    console.log(users[i].posts[j]);
                     for (z in users[i].posts[j].tags) {
                         if (contains(users[i].posts[j].tags, tag)) 
                             listPosts.push(users[i].posts[j]);
