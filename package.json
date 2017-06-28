@@ -1,0 +1,30 @@
+{
+  "name": "tuitinho",
+  "version": "1.0.0",
+  "description": "Atividade de Sistema Distribuidos",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cleber-abreu/tuitinho.git"
+  },
+  "keywords": [
+    "tuitinho",
+    "rest",
+    "restfull"
+  ],
+  "author": "Cleber Abreu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cleber-abreu/tuitinho/issues"
+  },
+  "homepage": "https://github.com/cleber-abreu/tuitinho#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.11.0",
+    "validator": "^7.1.0"
+  }
+}
