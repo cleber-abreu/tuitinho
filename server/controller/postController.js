@@ -80,21 +80,25 @@ exports.postsTags = function(callback) {
 exports.postsTag = function(tag, callback) {
    db.User.find({}, function(error, users) {
         if (error) {
-            callback({error: 'Não foi possível retornar as tags'});
+            callback({error: 'Não foi possível retornar as publicações referente a tag #' + tag});
         } else {
             var listPosts = [];
             
             for (i in users) {
-                for( j in users[i].posts) {
-                    console.log(users[i].posts[j]);
+                for(j in users[i].posts) {
                     for (z in users[i].posts[j].tags) {
-                        if (contains(users[i].posts[j].tags, tag)) 
+                        if (users[i].posts[j].tags[z] == tag) {
                             listPosts.push(users[i].posts[j]);
-                        break;
+                            break;
+                        }
                     }
                 }
             }
-            callback(listPosts);
+            if (listPosts.length > 0) {
+                callback(listPosts);
+            } else {
+                callback({error: 'Não foi encontrado nenhuma publicação referente a tag #' + tag});
+            }
         }
     });
 };
