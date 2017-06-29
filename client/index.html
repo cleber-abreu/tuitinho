@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="-br" ng-app="tuitinho">
+    <head>
+        <meta charset="utf-8">
+        <title>Tuitinho</title>
+        <link rel="stylesheet" type="text/css" href="css/layout.css">
+        <script src="js/angular.min.js"></script>
+        <script src="js/app.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Tuitinho</h1>
+        </header>
+        
+        <section ng-controller="posts">
+            <article>
+                <header><h2>Publicações</h2></header>
+                <div ng-repeat="post in posts">
+                    <p>
+                        <b>{{ post.username }}</b>: {{ post.text }}
+                    </p>
+                </div>
+            </article>
+        </section>
+        
+        <section ng-controller="posts">
+            <article>
+                <header><h2>Tags</h2></header>
+                <div ng-repeat="tag in tags">
+                    <p>
+                        <b><a href="tag.html/{{ tag }}" >{{ tag }}</a></b>
+                    </p>
+                </div>
+            </article>
+        </section>
+        
+        <section>
+            <header><h2>Entre com sua conta</h2></header>
+            <form method="get" action="user.html">
+                <label for="username">Usuário</label><br>
+                <input type="text" id="id" name="Id"><br>
+                <label for="senha">Senha</label><br>
+                <input type="password" id="senha"><br>
+                <input type="submit" value="Entrar"><br>
+                <a href="#">Esqueceu a senha? Recupere clicando aqui</a><br>
+                <a href="register.html">Não possui cadastro? Cadastre clicando aqui</a>
+            </form>
+        </section>
+        
+    </body>
+</html>

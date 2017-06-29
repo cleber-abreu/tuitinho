@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="-br" ng-app="tuitinho">
+    <head>
+        <meta charset="utf-8">
+        <title>Tuitinho</title>
+        <link rel="stylesheet" type="text/css" href="css/layout.css">
+        <script src="js/angular.min.js"></script>
+        <script src="js/app.js"></script>
+    </head>
+    <body ng-controller="posts">
+        <header>
+            <h1>Tuitinho</h1>
+        </header>
+        
+        <section>
+            <header><h2>Cadastro</h2></header>
+            <form>
+                <label for="fullname">Nome</label><br>
+                <input type="text" id="fullname" name="fullname"><br>
+                <label for="password">Senha</label><br>
+                <input type="password" id="password" name="password"><br>
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email"><br>
+                <label for="dateBirth">Data de Nascimento</label><br>
+                <input type="text" id="dateBirth" name="dateBirth"><br>
+                <button type="button" ng-click="submitNewUser()">Caddastrar</button>
+            </form>
+        </section>
+    </body>
+</html>

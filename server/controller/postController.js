@@ -14,7 +14,7 @@ function getHashTag (text) {
                       hashSub[x] = hashSub[x].slice(0, -1);
                   }
                   if (hashSub[x] != "") {
-                      tagListArray.push(hashSub[x]);
+                      tagListArray.push("#"+hashSub[x]);
                   }
             }
         }
@@ -67,8 +67,16 @@ exports.postsTags = function(callback) {
             for (i in users) {
                 for( j in users[i].posts) {
                     for (z in users[i].posts[j].tags) {
-//                        if (!contains(listTags, users[i].posts[j].tags[z])) 
+                        var existent = false;
+                        for (y in listTags) {
+                            if (users[i].posts[j].tags[z] == listTags[y]) {
+                                existent = true;
+                                break;
+                            }
+                        }
+                        if (!existent) {
                             listTags.push(users[i].posts[j].tags[z]);
+                        }
                     }
                 }
             }
