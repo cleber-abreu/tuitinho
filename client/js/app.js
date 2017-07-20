@@ -8,6 +8,7 @@ angular.module('tuitinho', [])
             id: document.getElementById("id").value, 
             text: document.getElementById("text").value
         });
+        alert("Publicação enviada com sucesso!");
     }
     
     $scope.submitNewUser = function() {
@@ -17,10 +18,12 @@ angular.module('tuitinho', [])
             email: document.getElementById("email").value, 
             dateBirth: document.getElementById("dateBirth").value
         });
+        alert("Usuário criado com sucesso!");
     }
     
     $scope.submitDeleteUser = function() {
         $http.delete(server + 'users/' + document.getElementById("id").value);
+        alert("Usurio removido com sucesso!");
     }
     
     $http.get(server + 'posts').

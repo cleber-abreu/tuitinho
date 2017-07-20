@@ -14,7 +14,7 @@ function getHashTag (text) {
                       hashSub[x] = hashSub[x].slice(0, -1);
                   }
                   if (hashSub[x] != "") {
-                      tagListArray.push("#"+hashSub[x]);
+                      tagListArray.push(hashSub[x]);
                   }
             }
         }
